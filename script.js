@@ -30,6 +30,29 @@ console.log(subtitulo);
 subtitulo = titulo.slice(-index); //Permite que se coloque índices negativos
 console.log(subtitulo);
 
+let nomeCliente = 'Maria Joana da Silva Alves';
+console.log(nomeCliente); 
+console.log(nomeCliente.startsWith('Joana')); //output: false
+console.log(nomeCliente.endsWith('da Silva')); //output: true
+console.log(nomeCliente.includes('Joana')); //output: true
+
+//Função que lê o nomeCliente e verifica se tem incluso na String o termo da Silva
+let clienteSilva = nomeCliente.includes("da Silva");
+if(clienteSilva){
+    console.log("Sim, o cliente tem o sobrenome da Silva");
+}else{
+    console.log("Não, o cliente não tem o sobrenome da Silva");
+}
+
+//Transformar String em array
+let disciplinas = 'frontend, bakend, banco de dados, git';
+let listaDisciplinas = disciplinas.split(', ');
+console.log(disciplinas);
+console.log(listaDisciplinas);
+
+//concat - Juntar uma String com outras strings
+disciplinas = disciplinas.concat(", ", "react", ", ", "python");
+console.log(disciplinas);
 
 
 
