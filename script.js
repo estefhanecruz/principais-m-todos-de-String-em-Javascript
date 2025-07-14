@@ -54,6 +54,24 @@ console.log(listaDisciplinas);
 disciplinas = disciplinas.concat(", ", "react", ", ", "python");
 console.log(disciplinas);
 
+//Exercícios
+const cliente = "   João   ";
+console.log(cliente.trim());
+
+const aluna = 'Ana';
+console.log(aluna.toUpperCase());
+
+const livro = 'O livro antigo foi revisado. A capa do livro antigo também foi trocada.'
+console.log(livro.replaceAll('antigo', 'novo'));
+
+const resposta1 = 'Resposta: A capital do Brasil é Brasília.';
+const resposta2 = 'Minha Resposta: A capital do Brasil é Brasília.';
+console.log(resposta1.startsWith('Resposta'));
+console.log(resposta2.startsWith('Resposta'));
+
+const saudacao = 'Olá, como vai';
+console.log(saudacao.concat('!'));
+
 
 
 
