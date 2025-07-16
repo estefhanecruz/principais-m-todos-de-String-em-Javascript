@@ -72,6 +72,91 @@ console.log(resposta2.startsWith('Resposta'));
 const saudacao = 'Olá, como vai';
 console.log(saudacao.concat('!'));
 
+//Métodos de Number
+
+//Operações com números
+
+let numero = 64.0;
+console.log(Math.pow(numero, 2)); //64.0 ao quadrado
+console.log(Math.sqrt(numero)); // raíz quadrada de 64.0
+console.log(Math.abs(numero)); // módulo 
+
+//Parsing
+
+let decimal = parseFloat('10.5'); //Transforma String em tipo number
+console.log(typeof decimal); //exibe na tela o tipo number
+
+let inteiro = parseInt('10.99'); //converte o tipo String para inteiro
+console.log(inteiro); 
+
+/*Importante: O ParseFloat e o ParseInt admitem letras *após* os números.
+Já o Number NÃO ADMITE. Se houver letras antes ou depois de um tipo Number,
+o output sai NaN (Not a Number)*/ 
+
+let numeroReal = Number('9.89');
+console.log(numeroReal);
+console.log(typeof numeroReal);
+
+//verificação
+console.log(Number.isInteger(inteiro)); //Recebe um número e retorna um booleano
+console.log(Number.isInteger(decimal)); //Recebe um número e retorna um booleano
+console.log(Number.isNaN(numeroReal)); //Verifica se a variável recebe um NaN (Not a Number)
+
+//Arredondamentos
+let taxaDeJuros = 1.8912123672;
+console.log(Math.floor(taxaDeJuros)); //*Arredonda para baixo* o número para o próximo inteiro
+console.log(Math.ceil(taxaDeJuros)); //Arredonda para cima
+console.log(Math.round(taxaDeJuros)); //Arredonda para o inteiro mais próximo
+
+//conversão de Number para outros tipos
+
+console.log(taxaDeJuros.toFixed(2)); //Transforma o número em uma String e exibe com determinado número de casas decimais
+console.log(taxaDeJuros.toString()); // Converte o tipo Number para String
+console.log(taxaDeJuros.toPrecision(5)); //Define a quantidade total de dígitos a ser exibido (antes e após a vírgula);
+
+//Max e Min
+let nota1 = 9;
+let nota2 = 7.5;
+let nota3 = 5;
+
+let maiorNota = Math.max(nota1, nota2, nota3);
+console.log(maiorNota);
+
+let menorNota = Math.min(nota1, nota2, nota3);
+console.log(menorNota);
+
+//Random
+let aleatorio = Math.random(); //Retorna um número pseudoaleatório entre 0 e 1;
+console.log(aleatorio);
+
+let aleatorioEntreZeroeCem = (aleatorio*100)%100; //O resto da divisão de qualquer número por cem é um número entre 0 e 99
+console.log(aleatorioEntreZeroeCem);
+
+//Exercícios
+
+let num1 = 5;
+console.log(`O valor de ${num1} elevado ao cubo é de `+Math.pow(num1, 3));
+
+let idade = '25 anos';
+console.log(parseInt(idade));
+
+let taxaDeEmprestimo = 4.649654;
+console.log(taxaDeEmprestimo.toFixed(2));
+
+const temperaturas = [38.9, 27.3, 18.6];
+let maiorTemperatura = Math.max(...temperaturas); 
+/*Operador de Propagação (...):
+O operador de propagação é usado para expandir um array em seus elementos 
+individuais. Quando usado com Math.max(), ele passa cada elemento do array 
+como um argumento separado, permitindo que a função encontre o máximo entre
+eles.*/
+console.log(maiorTemperatura);
+
+
+
+
+
+
 
 
 
