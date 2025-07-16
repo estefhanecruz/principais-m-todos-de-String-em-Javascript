@@ -152,11 +152,41 @@ como um argumento separado, permitindo que a função encontre o máximo entre
 eles.*/
 console.log(maiorTemperatura);
 
+//operações com listas
 
+let listaCompras = ['arroz', 'feijão', 'pão'];
+console.table(listaCompras); //exibe a lista na tela no formato de tabela
 
+//Adicionar itens à lista
 
+listaCompras.push('água', 'refrigerante'); //Adiciona ítens ao fim da lista
+console.table(listaCompras);
 
+listaCompras.unshift('queijo', 'presunto'); //Adiciona ítens ao início da lista
+console.table(listaCompras);
 
+//Remover itens da lista
+listaCompras.pop(); //Remove o último ítem da lista
+console.table(listaCompras);
 
+let itemRemovido = listaCompras.pop(); //O método pop também retorna o ítem que foi removido
+console.table(listaCompras);
+console.log(itemRemovido);
 
+listaCompras.shift(); //Remove o primeiro elemento da lista
+console.table(listaCompras);
 
+//exercícios
+
+let listaDeCompras = ['Arroz', 'feijão', 'carne'];
+listaDeCompras.unshift('frango');
+listaDeCompras.push('macarrão');
+console.table(listaDeCompras);
+
+let frutas = ['maçã', 'banana', 'laranja'];
+frutas.pop();
+console.table(frutas);
+
+let estanteDeLivros =  ['Game Of Thrones', 'Harry Potter', 'O código Da Vinci'];
+estanteDeLivros.shift();
+console.table(estanteDeLivros);
