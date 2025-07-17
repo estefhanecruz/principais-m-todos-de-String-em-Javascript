@@ -190,3 +190,99 @@ console.table(frutas);
 let estanteDeLivros =  ['Game Of Thrones', 'Harry Potter', 'O código Da Vinci'];
 estanteDeLivros.shift();
 console.table(estanteDeLivros);
+
+//filter
+let numeros = [1, 7, 19, 20, 6, 109, 77, 42, 6, 1.5, 200];
+
+/*O método filter() cria um novo array com todos os elementos que passaram 
+no teste implementado pela função fornecida.*/
+/*O método filter recebe um parâmetro, e esse parâmetro é uma função.
+O objetivo dessa função é passar ítem a ítem dessa lista para verificar
+se atende a uma determinada condição. Se atende, o ítem é copiado para 
+a lista filtrada. */
+let numerosGrandes = numeros.filter((item)=>{ 
+    return item>20;
+
+    //Essa função tem a mesma saída que anterior, só que expandida
+    // if(item>20){
+    //     return true;
+    // }else{
+    //     return false;
+    // }
+
+});
+console.log(numeros); //Lista original segue inalterada
+console.log(numerosGrandes);
+
+// Lista de objetos
+let recados = [
+    {
+        id: 312,
+        descricao: 'Estudar Javascript',
+        urgente: true
+    },
+    {
+        id: 412, 
+        descricao: 'Fazer os exercícios',
+        urgente: true
+    },
+    {
+        id: 117, 
+        descricao: 'Entender listas',
+        urgente: false
+    }, 
+    {
+        id: 55, 
+        descricao: 'Comparar Javascript com python',
+        urgente: false
+    }
+];
+console.table(recados);
+let recadosUrgentes = recados.filter(recado => recado.urgente); 
+//Recebe os recados e retorna apenas os que tem a flag urgente = true
+console.table(recadosUrgentes);
+
+let recadosJavascript = recados.filter((recado)=>recado.descricao.includes('Javascript'));
+//Recebe os recados e retorna apenas os que incluem a string 'Javascript' na descrição
+console.table(recadosJavascript);
+
+//Exercícios
+
+//Um usuário tem uma lista de números e deseja filtrar apenas os números pares.
+let listaDeNumeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let numerosPares = listaDeNumeros.filter((valor)=>valor%2===0);
+console.log(numerosPares);
+
+/*Uma cliente tem uma lista de nomes e deseja filtrar apenas os nomes que iniciam com a 
+palavra João.*/
+let nomes = ['João', 'Maria', 'Daphne', 'Pedro','João Pedro','Ana','José','Maria João'];
+let nomesJoao = nomes.filter((nome)=>nome.startsWith('João'));
+console.log(nomesJoao);
+
+/*Um usuário tem uma lista de objetos que possuem várias propriedades, incluindo uma informação
+sobre o nível de urgência (de 1 a 5), sendo 1 pouco urgente e 5 muito urgente. O objetivo é 
+filtrar apenas os objetos onde o campo urgente é maior ou igual a 3 */
+let itens = [
+    {nome: 'Item 1', categoria: 'Eletrônicos', urgente: 5},
+    {nome: 'Item 2', categoria: 'Livros', urgente: 3},
+    {nome: 'Item 3', categoria: 'Alimentos', urgente: 4},
+    {nome: 'Item 4', categoria: 'Roupas', urgente: 2},
+    {nome: 'Item 5', categoria: 'Ferramentas', urgente: 5},
+]
+let itensUrgentes = itens.filter((item)=>item.urgente>=3);
+console.table(itensUrgentes);
+
+/*Um cliente tem uma lista de cidades com seus respectivos estados e deseja filtrar apenas
+as cidades que estão localizadas no estado do Rio Grande do Sul (RS) */
+
+let cidades = [
+    {nome: 'Porto Alegre', estado: 'RS'},
+    {nome: 'Pelotas', estado: 'RS'},
+    {nome: 'Caxias do Sul', estado: 'RS' },
+    {nome: 'Curitiba', estado: 'PR' },
+    {nome: 'Florianópolis', estado: 'SC'},
+];
+let cidadesRs = cidades.filter((cidade)=>cidade.estado === 'RS');
+console.table(cidadesRs);
+
+
