@@ -299,4 +299,59 @@ let recadoInexistente = recados.find(item => item.id === 999);
 console.log(recadoInexistente);
 // Retorna undefined
 
+/*if para mostrar se determinado recado existe ou não existe*/
+// if(!recadoInexistente){
+//     alert('Erro! o recado não existe!');
+// }
+ //FindIndex
+ /*Retorna a posição do primeiro item que satisfaz uma condição.
+ Quando um item não existe o findIndex retorna -1 */
+
+ let posicaoRecadoListas = recados.findIndex(item => item.id===117); //Retorne a posição do primeiro item do array cujo id é 117
+ console.log(posicaoRecadoListas);
+
+ let posicaoRecadoInexistente = recados.findIndex(item=>item.id ===999);
+ console.log(posicaoRecadoInexistente);  //output: -1
+
+//  if(posicaoRecadoInexistente<0){
+//     alert('Erro! o recado não existe!');
+//  }
+
+//Acessar um item a partir de sua posição:
+console.log(recados[posicaoRecadoListas].descricao);
+//retorna a descrição do item na posição 117 
+
+//Exercícios
+
+/* 1- Encontre o primeiro número par da lista e exiba no console a posição
+deste número na lista*/
+const valores = [1, 3, 7, 8, 9, 12, 20, 21];
+let valorPar = valores.findIndex(valor => valor%2 === 0);
+console.log(valorPar);
+
+/* 2 - Considere a lista de produtos abaixo e resolva as questões para encontrar
+determinados produtos. Se houver produto com a condição da questão, mostre o produto no
+console. Caso contrário, exiba "Produto não encontrado" */
+const produtos = [
+    {nome: 'Caneta', preço: 5, estoque: 6},
+    {nome: 'Caderno', preço: 20, estoque: 20},
+    {nome: 'Mochila', preço: 150, estoque: 2},
+    {nome: 'Borracha', preço: 3, estoque: 1},
+    {nome: 'Lápis', preço: 2, estoque: 12}
+];
+ //2.1 - Encontre o primeiro produto caro (acima de R$ 100,00);
+ let produtoCaro = produtos.find(produto => produto.preço>100);
+ console.log(produtoCaro);
+ 
+ // 2.2 - Encontre o primeiro produto que está sem estoque.
+ let produtoSemEstoque = produtos.find(produto=>produto.estoque===0);
+ if(!produtoSemEstoque){
+    console.log('Produto não encontrado');
+ }else{
+    console.log(produtoSemEstoque);
+ }
+ 
+ // 2.3 - Encontre o primeiro produto que possua ao menos 10 itens no estoque.
+ let produtoDezItens = produtos.find(produto=>produto.estoque>=10);
+ console.log(produtoDezItens);
 
