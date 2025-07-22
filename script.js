@@ -285,4 +285,18 @@ let cidades = [
 let cidadesRs = cidades.filter((cidade)=>cidade.estado === 'RS');
 console.table(cidadesRs);
 
+//Find
+/*Busca o primeiro elemento em um array que satisfaça uma condição específica */
+
+let recadoListas = recados.find(item => item.id ===117);
+/*Lê a lista de recados e encontra o item por id*/
+console.log(recadoListas); 
+
+let recadoUrgente = recados.find(item => item.urgente); //Retorna apenas o primeiro ítem que corresponde à busca
+console.table(recadoUrgente);
+
+let recadoInexistente = recados.find(item => item.id === 999);
+console.log(recadoInexistente);
+// Retorna undefined
+
 
