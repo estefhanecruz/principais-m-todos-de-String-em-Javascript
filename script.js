@@ -417,7 +417,76 @@ console.log(tarefasConcluidas); //output: false
 
 //******************** Fim dos exercícios ********************
 
-//forEach e map
+// map e forEach
+//Map é uma função que faz uma cópia de uma lista e faz alterações nela.
 
+let listaAtualizada = recados.map(recado => {
+    return{
+        id: recado.id+100,
+        descricao: recado.descricao,
+        // urgente: recado.urgente  
+    }/*Eu posso suprimir alguma propriedade que eu não queira na nova lista*/
+});
+console.table(recados); //output: Lista original sem alterações
+console.table(listaAtualizada); //output:Lista com IDs alterados;
 
+//Para listar apenas a descrição dos recados:
+listaDescricoes = recados.map(recado => recado.descricao);
+console.log(listaDescricoes);
 
+//forEach
+/*Percorre e faz alteração em todos os itens de uma lista sem criar uma 
+cópia. funciona apenas em listas de objetos. Não funciona em listas de 
+números ou Strings*/
+recados.forEach(recado => {
+    console.log(recados); //Para cada recado da lista, faça um console.log
+    // recado.id +=500; 
+    /*Soma 500 aos IDs dos recados*/
+});
+
+//******************** Exercícios ********************
+
+/*Em um supermercado, o gerente decidiu dar um desconto de 10% em alguns
+produtos. Sua tarefa é calcular o preço final desses produtos com o desconto 
+aplicado e exibir a nova lista de preços */
+let produtosSupermercado = [
+    {nome:'Arroz', preco: 20.00},
+    {nome:'Feijão', preco: 10.00},
+    {nome:'Macarrão', preco: 8.00},
+    {nome:'Açúcar', preco: 5.00}
+];
+let produtosSupermercadoAtualizado = produtosSupermercado.map(produto=>{
+    return {
+        nome: produto.nome,
+        preco: produto.preco-(0.1*produto.preco)
+    }
+});
+console.table(produtosSupermercadoAtualizado);
+
+/*Você trabalha numa biblioteca e precisa criar uma lista para saber quantas
+páginas ainda faltam para terminar de ler cada livro. Para isso, você tem
+uma lista de livros com o total de páginas e as páginas que já foram lidas.*/
+
+let obras = [
+    {titulo: 'O Senhor dos Anéis', totalPaginas: 1000, paginasLidas: 320},
+    {titulo: '1984', totalPaginas: 328, paginasLidas: 100},
+    {titulo: 'O código da Vinci', totalPaginas: 96, paginasLidas: 50}
+];
+let paginasFaltantes = obras.map(obra => {
+    return{
+        titulo: obra.titulo,
+        numPaginasFaltantes: `Faltam ler ${obra.totalPaginas-obra.paginasLidas} página(s)`
+    }
+});
+console.table(paginasFaltantes);
+
+/*Você está organizando uma festa e tem uma lista de convidados. Agora quer enviar uma 
+mensagem de confirmação para cada um deles. Mostre no console uma mensagem para cada 
+convidado usando forEach. */
+
+let convidados = ['João', "Maria", "Carlos", "Fernanda"];
+let mensagem = convidados.forEach(convidado=>{
+    return console.log(`Querido(a) ${convidado}, você confirmou sua ida à festa`)
+});
+
+//******************** Fim dos exercícios ********************
