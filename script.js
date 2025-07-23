@@ -54,7 +54,9 @@ console.log(listaDisciplinas);
 disciplinas = disciplinas.concat(", ", "react", ", ", "python");
 console.log(disciplinas);
 
-//Exercícios
+
+//******************** Exercícios ********************
+
 const cliente = "   João   ";
 console.log(cliente.trim());
 
@@ -71,6 +73,8 @@ console.log(resposta2.startsWith('Resposta'));
 
 const saudacao = 'Olá, como vai';
 console.log(saudacao.concat('!'));
+
+//******************** Fim dos exercícios ********************
 
 //Métodos de Number
 
@@ -132,7 +136,7 @@ console.log(aleatorio);
 let aleatorioEntreZeroeCem = (aleatorio*100)%100; //O resto da divisão de qualquer número por cem é um número entre 0 e 99
 console.log(aleatorioEntreZeroeCem);
 
-//Exercícios
+//******************** Exercícios ********************
 
 let num1 = 5;
 console.log(`O valor de ${num1} elevado ao cubo é de `+Math.pow(num1, 3));
@@ -151,6 +155,8 @@ individuais. Quando usado com Math.max(), ele passa cada elemento do array
 como um argumento separado, permitindo que a função encontre o máximo entre
 eles.*/
 console.log(maiorTemperatura);
+
+//******************** Fim dos exercícios ********************
 
 //operações com listas
 
@@ -176,7 +182,7 @@ console.log(itemRemovido);
 listaCompras.shift(); //Remove o primeiro elemento da lista
 console.table(listaCompras);
 
-//exercícios
+//******************** Exercícios ********************
 
 let listaDeCompras = ['Arroz', 'feijão', 'carne'];
 listaDeCompras.unshift('frango');
@@ -214,6 +220,8 @@ let numerosGrandes = numeros.filter((item)=>{
 console.log(numeros); //Lista original segue inalterada
 console.log(numerosGrandes);
 
+//******************** Fim dos exercícios ********************
+
 // Lista de objetos
 let recados = [
     {
@@ -246,7 +254,9 @@ let recadosJavascript = recados.filter((recado)=>recado.descricao.includes('Java
 //Recebe os recados e retorna apenas os que incluem a string 'Javascript' na descrição
 console.table(recadosJavascript);
 
-//Exercícios
+
+//******************** Exercícios ********************
+
 
 //Um usuário tem uma lista de números e deseja filtrar apenas os números pares.
 let listaDeNumeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -285,6 +295,8 @@ let cidades = [
 let cidadesRs = cidades.filter((cidade)=>cidade.estado === 'RS');
 console.table(cidadesRs);
 
+//******************** Fim dos exercícios ********************
+
 //Find
 /*Busca o primeiro elemento em um array que satisfaça uma condição específica */
 
@@ -321,7 +333,8 @@ console.log(recadoInexistente);
 console.log(recados[posicaoRecadoListas].descricao);
 //retorna a descrição do item na posição 117 
 
-//Exercícios
+
+//******************** Exercícios ********************
 
 /* 1- Encontre o primeiro número par da lista e exiba no console a posição
 deste número na lista*/
@@ -354,4 +367,57 @@ const produtos = [
  // 2.3 - Encontre o primeiro produto que possua ao menos 10 itens no estoque.
  let produtoDezItens = produtos.find(produto=>produto.estoque>=10);
  console.log(produtoDezItens);
+
+ //******************** Fim dos exercícios ********************
+
+// Some e every
+
+//Some
+/* Verifica se algum elemento do array atende a uma determinada condição e retorna
+um booleano*/
+
+let existeRecadoUrgente = recados.some(recado=>recado.urgente); 
+/*Retorna true se existir algum recado com a flag urgente*/
+console.log(existeRecadoUrgente); //output: true
+
+let existeRecadoJavascript = recados.some(recado=>recado.descricao.includes('Javascript')); //Retorna true se houver algum recado cuja descrição inclua a palavra Javascript
+console.log(existeRecadoJavascript);
+
+//Every
+/* Verifica se todos os elementos do array atendem a uma determinada condição e retorna
+um booleano*/
+
+let todosOsRecadosSaoUrgentes = recados.every(recado=>recado.urgente);
+//Verifica se todos os recados são urgentes
+console.log(todosOsRecadosSaoUrgentes); //output: false
+
+//******************** Exercícios ********************
+
+/*Um usuário tem uma lista de pessoas com suas idades e deseja verificar se existe pelo menos
+uma pessoa maior de 18 anos.*/
+let maioresOumenores = [
+    {nome: 'Lucas', idade: 16},
+    {nome: 'Maria', idade: 22},
+    {nome: 'Carlos', idade: 15},
+    {nome: 'Fernanda', idade: 30}
+];
+let maiorDeIdade = maioresOumenores.some(pessoa=>pessoa.idade>18); //Se houver alguem com idade > 18, retorna true
+console.log(maiorDeIdade); //output: true
+
+/*Um estudante tem uma lista de tarefas de estudo e deseja verificar se todas as tarefas 
+foram concluídas (status true)*/
+let tarefasEstudo = [
+    {descricao: 'Estudar Matemática', concluido: true},
+    {descricao: 'Revisar física', concluido: true},
+    {descricao: 'Fazer exercícios de química', concluido: true},
+    {descricao: 'Ler capítulo de biologia', concluido: false},
+];
+let tarefasConcluidas = tarefasEstudo.every(tarefa=>tarefa.concluido); //Retorna true se todas as tarefas foram concluída
+console.log(tarefasConcluidas); //output: false
+
+//******************** Fim dos exercícios ********************
+
+//forEach e map
+
+
 
