@@ -645,6 +645,56 @@ console.table(participantesOrdenados);
 
 //******************** Fim dos exercícios ********************
 
+//Reduce
+//Criar a soma dos valores de todas as bebidas
 
+const listaDeBebidas = [
+    {id: 55, descricao: 'Gin', valor: 90.00, categoria: 'festa'},
+    {id: 90, descricao: 'Bacardi', valor: 110.70, categoria: 'festa'},
+    {id: 47, descricao: 'Cachaça', valor: 15.30, categoria: 'bar'},
+    {id: 11, descricao: 'Chopp', valor: 8.00, categoria: 'bar'},
+];
+let soma = listaDeBebidas.reduce((somaAtual, bebida)=>{
+    return somaAtual+bebida.valor;
+}, 0);
+console.log(`A soma dos valores de todas as bebidas é R$ ${soma.toFixed(2)}`);
 
+//Agrupando itens a partir de um campo
+let categorias = listaDeBebidas.reduce((atual, bebida)=>{
+        if(!atual[bebida.categoria]){
+            atual[bebida.categoria] = [];
+        }
+        atual[bebida.categoria].push(bebida);
+        return atual;
+    }, {});
+console.table(categorias);
 
+//******************** Exercícios ********************
+
+/*Um funcionário de uma loja precisa saber quanto vendeu no último dia. Então ele fez uma
+lista com os valores das vendas dos produtos e calculou o total. */
+let vendas = [150.75, 200.5, 50.25, 80.00, 120.00];
+console.log(`No último dia vendeu R$ ${ 
+    vendas.reduce((somaAtual, valor)=>{
+        return somaAtual+valor;
+    }, 0).toFixed(2)
+}`);
+
+/*Você está acompanhando um campeonato de videogame e deseja saber quantos pontos seus 
+amigos acumularam juntos em uma partida. */
+let fichasJogadores = [
+    {jogador: 'Pedro', pontos: 20},
+    {jogador: 'Maria', pontos: 50},
+    {jogador: 'Alice', pontos: 5},
+    {jogador: 'Fabiana', pontos: 120},
+    {jogador: 'Carla', pontos: 560},
+    {jogador: 'Jorge', pontos: 4}
+];
+
+console.table(`Acumularam ${
+    fichasJogadores.reduce((resultado, fichaJogador)=>{
+        return resultado+fichaJogador.pontos;
+    },0)} pontos`
+);
+
+//******************** Fim dos exercícios ********************
