@@ -577,6 +577,73 @@ console.log(tarefasDoCampeonato.reverse());
 
 //******************** Fim dos exercícios ********************
 
+//Sort
+/*Altera a lista original e modifica a ordem dos elementos para determinada ordem.
+Por padrão retorna pela ordem crescente*/
+console.log(operadores.sort()); //output: ['Ana', 'João', 'Maria', 'Pedro']
+/* Retorna um valor negativo (-1), se o primeiro argumento for menor que o segundo argumento,
+0 se os dois argumentos forem iguais ou 1 positivo se o primeiro argumento for maior que o 
+segundo*/
+
+//Para reverter para ordem decrescente
+console.log(
+    operadores.sort((a, b) => {
+    //Retorna -1, ou 1
+
+        if(a>b){
+            return -1;
+        }
+        else{
+            return 1;
+        }
+    })
+); //Output: ['Pedro', 'Maria', 'João', 'Ana']
+
+let materiasDaFaculdade = [
+    {id: 100, nome: 'Física aplicada', prioridade: 'alta'},
+    {id: 250, nome: 'Matemática discreta', prioridade: 'média'},
+    {id: 220, nome: 'Algoritmos', prioridade: 'alta'},
+    {id: 50,  nome: 'Geometria',  prioridade: 'baixa'}
+]
+//Ordenando em ordem crescente por id
+console.table(
+    materiasDaFaculdade.sort((a,b) =>{
+        if(a.id<b.id){
+            return -1;
+        }else{
+            return 1;
+        }
+    })
+); //Output: matérias na ordem crescente por id
+
+
+//******************** Exercícios ********************
+
+/*Você está organizando uma lista de nomes e quer se certificar de que todos os convidados 
+estão organizados em ordem alfabética para facilitar a hora de fazer as ligações. */
+let convidadosParaLigar = ['Carlos', 'Ana', 'Mariana', 'Felipe', 'João'];
+console.log(convidadosParaLigar.sort());
+
+/*Você está organizando uma equipe para um torneio de esportes e precisa classificar os 
+participantes por idade. Para isso, você fez uma lista com as idades deles e quer organizá-los
+do mais jovem para o mais velho.*/
+let participantes = [
+    {nome: 'Alice', idade: 21},
+    {nome: 'Joice', idade: 30},
+    {nome: 'Bruna', idade: 12},
+    {nome: 'Lorena', idade: 25},
+    {nome: 'Clarice', idade: 42}
+    ];
+let participantesOrdenados = participantes.sort((a,b) => {
+    if(a.idade<b.idade){
+        return -1;
+    }else{
+        return 1;
+    }
+});
+console.table(participantesOrdenados);
+
+//******************** Fim dos exercícios ********************
 
 
 
