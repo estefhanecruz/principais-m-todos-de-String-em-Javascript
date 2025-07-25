@@ -490,3 +490,94 @@ let mensagem = convidados.forEach(convidado=>{
 });
 
 //******************** Fim dos exercícios ********************
+
+//Slice e Splice
+// Slice - Uma 'fatia' de uma lista: pega uma determinada parte de uma lista e cria outra lista
+let recadosRestantes = recados.slice(1); //"corta" o primeiro recado da lista e retorna o resto"
+console.table(recadosRestantes);
+console.table(recados); //Não altera a listra original
+
+console.table(recadosRestantes = recados.slice(1,3)); /* Retorne o que está no index 1 até o 
+2, excluindo do 3 em diante */
+
+//Splice
+
+let elementosRemovidos = recados.splice(1, 2); /*Começo a excluir a partir do elemento index 1, e excluo um total de 
+2 elementos. */
+console.table(recados); //Altera a lista original
+console.table(elementosRemovidos); //Retorna os elementos removidos
+
+//******************** Exercícios ********************
+/*Vamos imaginar que você tem uma lista de frutas e deseja obter apenas as primeiras três
+frutas dessa lista. */
+let listaDeFrutas = ['Maçã', 'Banana', 'Laranja', 'Uva', 'Abacaxi'];
+let tresPrimeirasFrutas = listaDeFrutas.slice(0, 3);
+console.table(tresPrimeirasFrutas);
+
+/*Você tem uma lista de tarefas e deseja obter todas as tarefas, exceto as duas primeiras, 
+mas sem alterar a lista original */
+let listaDeTarefas = ['Estudar para a prova', 'Revisar os exercícios', 'Assistir as aulas', 'ler um livro'];
+let tarefasSelecionadas = listaDeTarefas.slice(2);
+console.table(tarefasSelecionadas);
+
+//Refaça o exercício 2, mas dessa vez excluindo os dois primeiros itens da lista original
+console.table(tarefasSelecionadas = listaDeTarefas.splice(2));
+
+//******************** Fim dos exercícios ********************
+
+//Join, Includes e Reverse
+
+//Join - Retorna os elementos de um array em forma de string com determinado separador entre eles
+let operadores = ['João', 'Ana', 'Maria', 'Pedro'];
+let operadoresTexto = operadores.join(', ');
+console.log(operadores); //Não altera o array original.
+console.log(operadoresTexto); 
+
+let recadosTexto = recados
+    .map(recado => recado.descricao) //extrai as descrições da lista
+    .join('; '); //Junta as descrições em uma string, sendo cada elemento separado por ; .
+console.log(recadosTexto);
+
+//Includes
+//Verificar se na lista de operadores está incluso um operador específico
+let existeOperadorJoao = operadores.includes('João');
+console.log(existeOperadorJoao); //Retorna um booleano
+
+//Reverse
+//Inverte a ordem dos elementos de uma lista, alterando a lista original
+operadores.reverse();
+console.log(operadores);
+
+//******************** Exercícios ********************
+/*Você tem uma lista de ingredientes para uma receita e deseja criar uma única String que 
+contenha todos os ingredientes separados por vírgulas. */
+let ingredientes = ['farinha', 'açúcar', 'ovos', 'leite', 'manteiga'];
+let stringIngredientes = ingredientes.join(', ');
+console.log(stringIngredientes);
+
+/*Você está organizando um campeonato de jogos e tem uma lista de jogadores inscritos. Você 
+quer verificar se um jogador específico se inscreveu no campeonato */
+let jogadores = ['Lucas', 'Mariana', 'Felipe', 'Tatiane', 'Roberto'];
+let jogadorParaVerificar = 'Felipe';
+let existeJogador = jogadores.includes(jogadorParaVerificar);
+console.log(existeJogador);
+
+
+/*Você é o organizador de um campeonato de futebol. Para garantir que tudo saia ocnforme o 
+planejado, você criou uma lista de tarefas, mas essa lista está em ordem invertida e você 
+precisa corrigir*/
+let tarefasDoCampeonato = [
+    'Divulgar o evento',
+    'Definir as equipes',
+    'Comrar os prêmios',
+    'Escolher o local do jogo',
+    'Criar as regras do torneio'
+];
+console.log(tarefasDoCampeonato.reverse());
+
+//******************** Fim dos exercícios ********************
+
+
+
+
+
